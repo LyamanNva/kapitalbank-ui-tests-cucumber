@@ -28,7 +28,7 @@ jobs:
       - name: Run tests
         run: >
           mvn -B test
-          -Dheadless=true
+          -Dheadless=false
           -Dcucumber.filter.tags="${{ github.event.inputs.tags || (github.event_name == 'schedule' && 'not @known-bug') || '@smoke' }}"
 
       - name: Upload reports
